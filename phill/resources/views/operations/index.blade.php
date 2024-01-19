@@ -7,6 +7,16 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+                    @if(Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ Session::get('error') }}
+                    </div>
+                    @endif
                     <a href="{{ route('operations.create') }}" class="btn btn-primary"> Criar Operação</a>
                     <table class="table">
                         <thead>
@@ -18,8 +28,12 @@
                         <tbody>
                             @foreach($operations as $operation)
                             <tr>
-                                <th scope="row">{{$operation->id}} </th>
-                                <th scope="row">{{$operation->name}} </th>
+                                <td scope="row">{{$operation->id}} </td>
+                                <td scope="row">{{$operation->name}} </td>
+                                <td scope="row"></td>
+                                <td scope="row" id="outer">
+                                    <a class="inner btn btn-sm btn-success" href="{{ route('operations.edit', $operation->id) }}">Editar</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

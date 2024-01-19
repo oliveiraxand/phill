@@ -24,3 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('operations/index', [OperationController::class, 'index'])->name('operations.index');
 Route::get('operations/create', [OperationController::class, 'create'])->name('operations.create');
 Route::post('operations/store', [OperationController::class, 'store'])->name('operations.store');
+Route::get('operations/edit/{id}', [OperationController::class, 'edit'])->name('operations.edit');
+Route::put('operations/update', [OperationController::class, 'update'])->name('operations.update');
