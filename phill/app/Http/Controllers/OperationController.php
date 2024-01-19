@@ -58,4 +58,17 @@ class OperationController extends Controller
         $request->session()->flash('success', 'Operação atualizada com sucesso!');
         return to_route('operations.index');
     }
+
+    public function destroy(Request $request) {
+        $operation = Operation::find($request->operation_id);
+        if(! $operation){
+            session()->flash('error', 'Não foi possível encontrar essa operação!');
+            return redirect()->route('operations.index')->withErrors([
+                'error' => 'Não foi possível encontrar essa operação!'
+            ]);
+        }
+        $operation->delete();
+        session()->flash('success', 'Operação removida com sucesso!');
+        return to_route('operations.index');
+    }
 }

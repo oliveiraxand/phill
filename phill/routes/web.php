@@ -26,3 +26,4 @@ Route::get('operations/create', [OperationController::class, 'create'])->name('o
 Route::post('operations/store', [OperationController::class, 'store'])->name('operations.store');
 Route::get('operations/edit/{id}', [OperationController::class, 'edit'])->name('operations.edit');
 Route::put('operations/update', [OperationController::class, 'update'])->name('operations.update');
+Route::delete('operations/destroy', [OperationController::class, 'destroy'])->name('operations.destroy');

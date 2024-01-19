@@ -31,8 +31,14 @@
                                 <td scope="row">{{$operation->id}} </td>
                                 <td scope="row">{{$operation->name}} </td>
                                 <td scope="row"></td>
-                                <td scope="row" id="outer">
+                                <td id="outer">
                                     <a class="inner btn btn-sm btn-success" href="{{ route('operations.edit', $operation->id) }}">Editar</a>
+                                    <form method="post" action="{{ route('operations.destroy') }}" class="inner" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="operation_id" value="{{ $operation->id }}">
+                                        <input type="submit" class="btn btn-sm btn-danger" value="Apagar">
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
