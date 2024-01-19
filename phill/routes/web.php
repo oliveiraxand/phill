@@ -21,6 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('operation/index', [OperationController::class, 'index'])->name('operation.index');
-Route::get('operation/create', [OperationController::class, 'create'])->name('operation.create');
-Route::post('operation/store', [OperationController::class, 'store'])->name('operation.store');
+Route::get('operations/index', [OperationController::class, 'index'])->name('operations.index');
+Route::get('operations/create', [OperationController::class, 'create'])->name('operations.create');
+Route::post('operations/store', [OperationController::class, 'store'])->name('operations.store');

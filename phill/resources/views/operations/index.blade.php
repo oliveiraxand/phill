@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
+                    <a href="{{ route('operations.create') }}" class="btn btn-primary"> Criar Operação</a>
                     <table class="table">
                         <thead>
                             <tr>

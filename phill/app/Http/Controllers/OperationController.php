@@ -10,14 +10,14 @@ class OperationController extends Controller
     public function index()
     {
         $operations = Operation::all();
-        return view('operation.index', [
+        return view('operations.index', [
             'operations' => $operations,
         ]);
     }
 
     public function create()
     {
-        return view('operation.create');
+        return view('operations.create');
     }
 
     public function store(OperationRequest $request)
@@ -26,6 +26,6 @@ class OperationController extends Controller
             'name' => strtoupper($request->name),
         ]);
 
-        return to_route('operation.index');
+        return to_route('operations.index');
     }
 }
