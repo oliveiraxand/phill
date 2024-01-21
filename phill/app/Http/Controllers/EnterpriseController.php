@@ -55,6 +55,8 @@ class EnterpriseController extends Controller
 
         $enterprise->update([
             'name' => strtoupper($request->name),
+            'cnpj' => $request->cnpj,
+            'is_partner' => $request->is_partner,
         ]);
 
         $request->session()->flash('success', 'empresa atualizada com sucesso!');

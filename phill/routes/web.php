@@ -32,3 +32,6 @@ Route::delete('operations/destroy', [OperationController::class, 'destroy'])->na
 Route::get('enterprises/index', [EnterpriseController::class, 'index'])->name('enterprises.index');
 Route::get('enterprises/create', [EnterpriseController::class, 'create'])->name('enterprises.create');
 Route::post('enterprises/store', [EnterpriseController::class, 'store'])->name('enterprises.store');
+Route::get('enterprises/edit/{id}', [EnterpriseController::class, 'edit'])->name('enterprises.edit');
+Route::put('enterprises/update', [EnterpriseController::class, 'update'])->name('enterprises.update');
+Route::delete('enterprises/destroy', [EnterpriseController::class, 'destroy'])->name('enterprises.destroy');
