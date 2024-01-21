@@ -30,3 +30,5 @@ Route::put('operations/update', [OperationController::class, 'update'])->name('o
 Route::delete('operations/destroy', [OperationController::class, 'destroy'])->name('operations.destroy');
 
 Route::get('enterprises/index', [EnterpriseController::class, 'index'])->name('enterprises.index');
+Route::get('enterprises/create', [EnterpriseController::class, 'create'])->name('enterprises.create');
+Route::post('enterprises/store', [EnterpriseController::class, 'store'])->name('enterprises.store');

@@ -22,8 +22,10 @@ class EnterpriseController extends Controller
 
     public function store(EnterpriseRequest $request)
     {
-        enterprise::create([
+        Enterprise::create([
             'name' => strtoupper($request->name),
+            'cnpj' => $request->cnpj,
+            'is_partner' => $request->is_partner,
         ]);
         $request->session()->flash('success', 'Empresa criada com sucesso!');
         return to_route('enterprises.index');

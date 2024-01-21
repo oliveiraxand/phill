@@ -17,7 +17,8 @@
                         {{ Session::get('error') }}
                     </div>
                     @endif
-                   <table class="table">
+                    <a href="{{ route('enterprises.create') }}" class="btn btn-primary"> Cadastrar Empresa</a>
+                    <table class="table">
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
