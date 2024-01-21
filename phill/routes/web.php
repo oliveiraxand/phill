@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperationController;
+use App\Http\Controllers\EnterpriseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::post('operations/store', [OperationController::class, 'store'])->name('op
 Route::get('operations/edit/{id}', [OperationController::class, 'edit'])->name('operations.edit');
 Route::put('operations/update', [OperationController::class, 'update'])->name('operations.update');
 Route::delete('operations/destroy', [OperationController::class, 'destroy'])->name('operations.destroy');
+
+Route::get('enterprises/index', [EnterpriseController::class, 'index'])->name('enterprises.index');
