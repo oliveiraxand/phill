@@ -10,13 +10,19 @@
                     <form method="post" action="{{ route('vehicles.store') }}">
                         @csrf
                         <div class="form-group">
-                            <label>NOME</label>
+                            <label>Empresa</label>
+                            <select name="enterprise_id" id="enterprise_id" class="form-select">  
+                                @foreach($enterprises as $enterprise)
+                                    <option value="{{ $enterprise->id }}">{{ $enterprise->name }}</option>
+                                @endforeach
+                            </select>
+                            <label>Placa</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="name"
-                                name="name"
-                                placeholder="Digite o tipo de operação"
+                                id="plate"
+                                name="plate"
+                                placeholder="AAA0000"
                                 style="text-transform:uppercase"
                             />
                         </div>

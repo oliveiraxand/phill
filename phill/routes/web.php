@@ -37,4 +37,6 @@ Route::get('enterprises/edit/{id}', [EnterpriseController::class, 'edit'])->name
 Route::put('enterprises/update', [EnterpriseController::class, 'update'])->name('enterprises.update');
 Route::delete('enterprises/destroy', [EnterpriseController::class, 'destroy'])->name('enterprises.destroy');
 
-Route::get('vehicles/index', [VehicleController::class, 'index'])->name('enterprises.index');
+Route::get('vehicles/index', [VehicleController::class, 'index'])->name('vehicles.index');
+Route::get('vehicles/create', [VehicleController::class, 'create'])->name('vehicles.create');
+Route::post('vehicles/store', [VehicleController::class, 'store'])->name('vehicles.store');

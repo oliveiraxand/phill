@@ -57,7 +57,8 @@ class VehicleController extends Controller
         }
 
         $vehicle->update([
-            'name' => strtoupper($request->name),
+            'enterprise_id' => $request->enterprise_id,
+            'plate' => $request->plate,
         ]);
 
         $request->session()->flash('success', 'Veículo atualizado com sucesso!');
