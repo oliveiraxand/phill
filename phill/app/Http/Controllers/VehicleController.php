@@ -43,8 +43,8 @@ class VehicleController extends Controller
                 'error' => 'Não foi possível encontrar essa operação!'
             ]);
         }
-
-        return view('vehicles.edit', ['vehicle' => $vehicle]);
+        $enterprise = \App\Models\Enterprise::find($vehicle->enterprise_id);
+        return view('vehicles.edit', ['vehicle' => $vehicle, 'enterprise' => $enterprise]);
     }
 
     public function update(VehicleRequest $request) {
@@ -57,7 +57,6 @@ class VehicleController extends Controller
         }
 
         $vehicle->update([
-            'enterprise_id' => $request->enterprise_id,
             'plate' => $request->plate,
         ]);
 

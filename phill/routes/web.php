@@ -40,3 +40,6 @@ Route::delete('enterprises/destroy', [EnterpriseController::class, 'destroy'])->
 Route::get('vehicles/index', [VehicleController::class, 'index'])->name('vehicles.index');
 Route::get('vehicles/create', [VehicleController::class, 'create'])->name('vehicles.create');
 Route::post('vehicles/store', [VehicleController::class, 'store'])->name('vehicles.store');
+Route::get('vehicles/edit/{id}', [VehicleController::class, 'edit'])->name('vehicles.edit');
+Route::put('vehicles/update', [VehicleController::class, 'update'])->name('vehicles.update');
+Route::delete('vehicles/destroy', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
