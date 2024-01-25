@@ -11,4 +11,8 @@ class Enterprise extends Model
 
     protected $fillable = ['name', 'cnpj', 'is_partner'];
 
+    public function vehicles()
+    {
+        return this->hasMany(Vehicle::class);
+    }
 }

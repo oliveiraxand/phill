@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperationController;
 use App\Http\Controllers\EnterpriseController;
+use App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,5 @@ Route::post('enterprises/store', [EnterpriseController::class, 'store'])->name('
 Route::get('enterprises/edit/{id}', [EnterpriseController::class, 'edit'])->name('enterprises.edit');
 Route::put('enterprises/update', [EnterpriseController::class, 'update'])->name('enterprises.update');
 Route::delete('enterprises/destroy', [EnterpriseController::class, 'destroy'])->name('enterprises.destroy');
+
+Route::get('vehicles/index', [VehicleController::class, 'index'])->name('enterprises.index');
