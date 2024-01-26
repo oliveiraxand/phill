@@ -46,3 +46,5 @@ Route::put('vehicles/update', [VehicleController::class, 'update'])->name('vehic
 Route::delete('vehicles/destroy', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
 
 Route::get('persons/index', [PersonController::class, 'index'])->name('persons.index');
+Route::get('persons/create', [PersonController::class, 'create'])->name('persons.create');
+Route::post('persons/store', [PersonController::class, 'store'])->name('persons.store');

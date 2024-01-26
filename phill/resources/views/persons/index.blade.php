@@ -34,7 +34,7 @@
                                 <td scope="row">{{$person->name}} </td>
                                 <td scope="row">{{$person->cpf}} </td>
                                 <td scope="row">{{$person->birth}} </td>
-                                <td scope="row">{{$person->enterprise_id}} </td>
+                                <td scope="row">{{$person->enterprise->name}} </td>
                                 <td scope="row"></td>
                                 <td id="outer">
                                 </td>

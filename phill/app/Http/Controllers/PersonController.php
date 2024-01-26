@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
+use App\Http\Requests\PersonRequest;
 
 class PersonController extends Controller
 {
     public function index()
     {
-        $persons = Person::all();
+        $persons = Person::with('enterprise')->get();
         // dd($persons);
         return view('persons.index', [
             'persons' => $persons,
@@ -26,8 +27,10 @@ class PersonController extends Controller
     public function store(PersonRequest $request)
     {
         Person::create([
+            'name' => strtoupper($request->name),
+            'cpf' => $request->cpf,
+            'birth' => $request->birth,
             'enterprise_id' => $request->enterprise_id,
-            'plate' => $request->plate,
         ]);
         $request->session()->flash('success', 'Veículo criado com sucesso!');
         return to_route('persons.index');
