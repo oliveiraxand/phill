@@ -2,6 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "start:frontend": "vite",
+        "start:backend": "php artisan serve",
         "dev": "vite",
         "build": "vite build"
     },
