@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperationController;
 use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,5 @@ Route::post('vehicles/store', [VehicleController::class, 'store'])->name('vehicl
 Route::get('vehicles/edit/{id}', [VehicleController::class, 'edit'])->name('vehicles.edit');
 Route::put('vehicles/update', [VehicleController::class, 'update'])->name('vehicles.update');
 Route::delete('vehicles/destroy', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
+
+Route::get('persons/index', [PersonController::class, 'index'])->name('persons.index');
