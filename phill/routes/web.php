@@ -48,3 +48,6 @@ Route::delete('vehicles/destroy', [VehicleController::class, 'destroy'])->name('
 Route::get('persons/index', [PersonController::class, 'index'])->name('persons.index');
 Route::get('persons/create', [PersonController::class, 'create'])->name('persons.create');
 Route::post('persons/store', [PersonController::class, 'store'])->name('persons.store');
+Route::get('persons/edit/{id}', [PersonController::class, 'edit'])->name('persons.edit');
+Route::put('persons/update', [PersonController::class, 'update'])->name('persons.update');
+Route::delete('persons/destroy', [PersonController::class, 'destroy'])->name('persons.destroy');

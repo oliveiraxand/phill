@@ -37,6 +37,13 @@
                                 <td scope="row">{{$person->enterprise->name}} </td>
                                 <td scope="row"></td>
                                 <td id="outer">
+                                <a class="inner btn btn-sm btn-success" href="{{ route('persons.edit', $person->id) }}">Editar</a>
+                                    <form method="post" action="{{ route('persons.destroy') }}" class="inner" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="person_id" value="{{ $person->id }}">
+                                        <input type="submit" class="btn btn-sm btn-danger" value="Apagar">
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

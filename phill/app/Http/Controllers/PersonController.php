@@ -32,7 +32,7 @@ class PersonController extends Controller
             'birth' => $request->birth,
             'enterprise_id' => $request->enterprise_id,
         ]);
-        $request->session()->flash('success', 'Veículo criado com sucesso!');
+        $request->session()->flash('success', 'Pessoa criada com sucesso!');
         return to_route('persons.index');
     }
     
@@ -40,9 +40,9 @@ class PersonController extends Controller
     {
         $person = Person::find($id);
         if (! $person) {
-            session()->flash('error', 'Não foi possível encontrar essa operação!');
+            session()->flash('error', 'Não foi possível encontrar essa pessoa!');
             return redirect()->route('persons.index')->withErrors([
-                'error' => 'Não foi possível encontrar essa operação!'
+                'error' => 'Não foi possível encontrar essa pessoa!'
             ]);
         }
         $enterprise = \App\Models\Enterprise::find($person->enterprise_id);
@@ -52,30 +52,32 @@ class PersonController extends Controller
     public function update(PersonRequest $request) {
         $person = Person::find($request->person_id);
         if(! $person) {
-            session()->flash('error', 'Não foi possível encontrar essa operação!');
+            session()->flash('error', 'Não foi possível encontrar essa pessoa!');
             return redirect()->route('persons.index')->withErrors([
-                'error' => 'Não foi possível encontrar essa operação!'
+                'error' => 'Não foi possível encontrar essa pessoa!'
             ]);
         }
 
         $person->update([
-            'plate' => $request->plate,
+            'name' => strtoupper($request->name),
+            'cpf' => $request->cpf,
+            'birth' => $request->birth,
         ]);
 
-        $request->session()->flash('success', 'Veículo atualizado com sucesso!');
+        $request->session()->flash('success', 'Pessoa atualizado com sucesso!');
         return to_route('persons.index');
     }
 
     public function destroy(Request $request) {
         $person = Person::find($request->person_id);
         if(! $person){
-            session()->flash('error', 'Não foi possível encontrar essa operação!');
+            session()->flash('error', 'Não foi possível encontrar essa pessoa!');
             return redirect()->route('persons.index')->withErrors([
-                'error' => 'Não foi possível encontrar essa operação!'
+                'error' => 'Não foi possível encontrar essa pessoa!'
             ]);
         }
         $person->delete();
-        session()->flash('success', 'Veículo removido com sucesso!');
+        session()->flash('success', 'Pessoa removido com sucesso!');
         return to_route('persons.index');
     }
 }

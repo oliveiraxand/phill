@@ -37,14 +37,14 @@
                                 placeholder="00/00/0000"
                                 style="text-transform:uppercase"
                             />
-                        </div>
-                        <label>Empresa</label>
+                            <label>Empresa</label>
                             <select name="enterprise_id" id="enterprise_id" class="form-select">  
                                 @foreach($enterprises as $enterprise)
-                                    <option value="{{ $enterprise->id }}">{{ $enterprise->name }}</option>
+                                <option value="{{ $enterprise->id }}">{{ $enterprise->name }}</option>
                                 @endforeach
                             </select>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
                     </form>
                 </div>
             </div>
