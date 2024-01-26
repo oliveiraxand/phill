@@ -15,4 +15,9 @@ class Enterprise extends Model
     {
         return this->hasMany(Vehicle::class);
     }
+    
+    public function persons()
+    {
+        return this->hasMany(Person::class);
+    }
 }
