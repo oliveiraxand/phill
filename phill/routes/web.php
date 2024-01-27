@@ -5,6 +5,7 @@ use App\Http\Controllers\OperationController;
 use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\VisitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,6 @@ Route::post('persons/store', [PersonController::class, 'store'])->name('persons.
 Route::get('persons/edit/{id}', [PersonController::class, 'edit'])->name('persons.edit');
 Route::put('persons/update', [PersonController::class, 'update'])->name('persons.update');
 Route::delete('persons/destroy', [PersonController::class, 'destroy'])->name('persons.destroy');
+
+
+Route::get('visits/index', [VisitController::class, 'index'])->name('visits.index');
